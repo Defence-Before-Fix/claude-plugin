@@ -68,3 +68,15 @@ carries its licence. The plugin's own files are MIT.
 
 The `skills/dbf` folder is in the Agent Skills format, so it can also be copied into another
 harness's skills directory without the plugin manifest.
+
+## Develop
+
+An installed plugin runs from a copy in Claude Code's plugin cache, not from a git checkout, so
+edit a clone of this repository and load it directly for a session:
+
+```bash
+claude --plugin-dir path/to/claude-plugin
+```
+
+Changes take effect at the next session start. The checks CI runs are in
+`.github/workflows/ci.yml`.
