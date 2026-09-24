@@ -1,0 +1,19 @@
+{
+  "name": "defence-before-fix",
+  "owner": {
+    "name": "Defence-Before-Fix",
+    "url": "https://defence-before-fix.github.io/"
+  },
+  "description": "Plugins published by the Defence Before Fix organisation.",
+  "plugins": [
+    {
+      "name": "defence-before-fix",
+      "displayName": "Defence Before Fix",
+      "description": "Runs the Defence Before Fix (DBF) method when a defect is found. Invoke with /dbf.",
+      "version": "0.1.0",
+      "homepage": "https://defence-before-fix.github.io/",
+      "source": "./",
+      "keywords": ["defence-before-fix", "dbf", "static-analysis", "quality", "methodology"]
+    }
+  ]
+}

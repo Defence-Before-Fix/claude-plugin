@@ -1,0 +1,2055 @@
+{
+  "languages": [
+    "PHP",
+    "JavaScript and TypeScript",
+    "Python",
+    "Go",
+    "Rust",
+    "Multi-language"
+  ],
+  "tools": [
+    {
+      "slug": "php-qa-ci",
+      "name": "php-qa-ci",
+      "page": "/tools/php-qa-ci.html",
+      "language": "PHP",
+      "kind": "toolchain",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "project": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "notes": [
+        {
+          "text": "Harness, resolver, derived listing and justified record verified by running them; fails toolchain "
+        },
+        {
+          "text": "4.1",
+          "href": "/TOOLING-SPEC.html#41-every-detector-the-toolchain-routes-a-defence-through-must-conform-to-the-detector-specification"
+        },
+        {
+          "text": " through its PHPArkitect tier and identifier-less lanes, "
+        },
+        {
+          "text": "4.2",
+          "href": "/TOOLING-SPEC.html#42-the-toolchain-must-resolve-every-identifier-a-defence-it-routes-can-print-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " on fifteen rules without a page, "
+        },
+        {
+          "text": "4.3",
+          "href": "/TOOLING-SPEC.html#43-the-toolchain-must-forbid-through-a-defence-of-its-own-every-suppression-route-that-bypasses-the-project-record"
+        },
+        {
+          "text": " on two baseline routes; declares 0.2.0 with eight recorded gaps."
+        }
+      ],
+      "checked": "2026-09-08, branch php8.4 at commit e25aba4, declaration merged at 4d9b2ba"
+    },
+    {
+      "slug": "deptrac",
+      "name": "Deptrac",
+      "page": "/tools/deptrac.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom collectors and violation subscribers meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": "; no single-file run fails "
+        },
+        {
+          "text": "5.2",
+          "href": "/DETECTOR-SPEC.html#52-the-detector-must-support-invocation-over-a-subset-at-minimum-a-single-file"
+        },
+        {
+          "text": ", layer names only partly meet "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": ", nothing resolves them for section "
+        },
+        {
+          "text": "6",
+          "href": "/DETECTOR-SPEC.html#6-resolving-an-identifier"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 4.7.1"
+    },
+    {
+      "slug": "infection",
+      "name": "Infection",
+      "page": "/tools/infection.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "A mutation tester, not a detector; custom mutators only partly meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": ", the class name printed fails "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": ", infection-ignore-all fails "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 0.35.4"
+    },
+    {
+      "slug": "php-cs-fixer",
+      "name": "PHP-CS-Fixer",
+      "page": "/tools/php-cs-fixer.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "A formatter whose Vendor rule names and describe command meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " and section "
+        },
+        {
+          "text": "6",
+          "href": "/DETECTOR-SPEC.html#6-resolving-an-identifier"
+        },
+        {
+          "text": "; the name prints only with verbose, failing "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 3.95.24"
+    },
+    {
+      "slug": "php-codesniffer",
+      "name": "PHP_CodeSniffer",
+      "page": "/tools/php-codesniffer.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom sniffs and single-sniff runs meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " and section "
+        },
+        {
+          "text": "5",
+          "href": "/DETECTOR-SPEC.html#5-reporting"
+        },
+        {
+          "text": "; the code is path-derived under "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": " and nothing resolves it, failing "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 4.0.4"
+    },
+    {
+      "slug": "phparkitect",
+      "name": "PHPArkitect",
+      "page": "/tools/phparkitect.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom expressions and runOnlyThis meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; no identifier beyond the because text fails "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": ", directory-only class sets fail "
+        },
+        {
+          "text": "5.2",
+          "href": "/DETECTOR-SPEC.html#52-the-detector-must-support-invocation-over-a-subset-at-minimum-a-single-file"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 1.3.0"
+    },
+    {
+      "slug": "phpmd",
+      "name": "PHPMD",
+      "page": "/tools/phpmd.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom rules and one-rule rulesets meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; the name is absent from default output under "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": ", documentation online only fails "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 2.15.0"
+    },
+    {
+      "slug": "phpstan",
+      "name": "PHPStan",
+      "page": "/tools/phpstan.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Bespoke rules, RuleTestCase harness, printed identifiers and a detectable ignore route meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "5.4",
+          "href": "/DETECTOR-SPEC.html#54-a-finding-must-not-be-reportable-only-through-a-hosted-service-licence-tier-or-ci-only-mode-the-practitioner-cannot-invoke-locally"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; bundled documentation online only fails "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 2.2.13"
+    },
+    {
+      "slug": "psalm",
+      "name": "Psalm",
+      "page": "/tools/psalm.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Plugin issues meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and section "
+        },
+        {
+          "text": "5",
+          "href": "/DETECTOR-SPEC.html#5-reporting"
+        },
+        {
+          "text": "; the harness under "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " is third party, bundled documentation online only fails "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": ", psalm-suppress weakens "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 6.16.1"
+    },
+    {
+      "slug": "rector",
+      "name": "Rector",
+      "page": "/tools/rector.html",
+      "language": "PHP",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom rules with fixtures and only meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": ", skips are configuration only under "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; the class name printed as identifier fails "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "."
+        }
+      ],
+      "checked": "2026-09-08, version 2.6.6"
+    },
+    {
+      "slug": "ts-qa-ci",
+      "name": "ts-qa-ci",
+      "page": "/tools/ts-qa-ci.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "toolchain",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "project": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "notes": [
+        {
+          "text": "Harness, resolver, derived listing and justified record all hold for the ESLint lane; the dependency-cruiser defence is outside all three, an eslint-suppressions.json silences a bundled defence, and a Tier A rule is never enabled; declares toolchain 0.2.0 at both levels with the gaps recorded"
+        }
+      ],
+      "checked": "2026-09-08, main at commit 46fac6a, declaration merged at ea2020b"
+    },
+    {
+      "slug": "biome",
+      "name": "Biome",
+      "page": "/tools/biome.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "GritQL plugin diagnostics carry no identifier, failing "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; biome-ignore cannot be switched off, failing "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; biome explain meets "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": " for built-ins"
+        }
+      ],
+      "checked": "2026-09-08, version 2.5.12"
+    },
+    {
+      "slug": "dependency-cruiser",
+      "name": "dependency-cruiser",
+      "page": "/tools/dependency-cruiser.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Named rules with comments meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": " and section "
+        },
+        {
+          "text": "6",
+          "href": "/DETECTOR-SPEC.html#6-resolving-an-identifier"
+        },
+        {
+          "text": "; the baseline is opt-in so "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": " holds; "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " needs a one-rule config workaround"
+        }
+      ],
+      "checked": "2026-09-08, version 18.2.0"
+    },
+    {
+      "slug": "eslint",
+      "name": "ESLint",
+      "page": "/tools/eslint.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Bespoke rules, harness and printed identifiers meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; noInlineConfig meets "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; core rule documentation is online only, failing "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        }
+      ],
+      "checked": "2026-09-08, version 10.10.0"
+    },
+    {
+      "slug": "oxlint",
+      "name": "oxlint",
+      "page": "/tools/oxlint.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "JS plugins are alpha so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " is partial; built-in documentation is online only, failing "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "; oxlint-disable cannot be switched off, failing "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 1.82.0"
+    },
+    {
+      "slug": "prettier",
+      "name": "Prettier",
+      "page": "/tools/prettier.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Formatter; plugins cannot report diagnostics so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": " fail; prettier-ignore cannot be switched off, failing "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 3.9.6"
+    },
+    {
+      "slug": "stryker",
+      "name": "Stryker",
+      "page": "/tools/stryker.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Mutation tester, not a detector; no plugin kind adds a rule, failing "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": "; Stryker disable comments cannot be switched off, failing "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 10.0.0"
+    },
+    {
+      "slug": "tsc",
+      "name": "The TypeScript compiler (tsc)",
+      "page": "/tools/tsc.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "No custom diagnostics, failing "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": "; a file argument discards tsconfig so "
+        },
+        {
+          "text": "5.2",
+          "href": "/DETECTOR-SPEC.html#52-the-detector-must-support-invocation-over-a-subset-at-minimum-a-single-file"
+        },
+        {
+          "text": " is partial; @ts- directives cannot be disabled, failing "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 7.0.2"
+    },
+    {
+      "slug": "typescript-eslint",
+      "name": "typescript-eslint",
+      "page": "/tools/typescript-eslint.html",
+      "language": "JavaScript and TypeScript",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "RuleCreator and RuleTester meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": ", ESLint supplies section "
+        },
+        {
+          "text": "5",
+          "href": "/DETECTOR-SPEC.html#5-reporting"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; bundled rule pages are online only, failing "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        }
+      ],
+      "checked": "2026-09-08, version 8.70.0"
+    },
+    {
+      "slug": "bandit",
+      "name": "Bandit",
+      "page": "/tools/bandit.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Plugin entry point, test id decorator and -t selection meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; ignore-nosec meets "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; no resolver so "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " fail"
+        }
+      ],
+      "checked": "2026-09-08, version 1.9.4"
+    },
+    {
+      "slug": "flake8",
+      "name": "Flake8",
+      "page": "/tools/flake8.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Entry point plugins with author-chosen prefix meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; disable-noqa meets "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": "; no resolver so "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " fail"
+        }
+      ],
+      "checked": "2026-09-08, version 7.3.0"
+    },
+    {
+      "slug": "mypy",
+      "name": "mypy",
+      "page": "/tools/mypy.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Type checker; plugin hooks give partial "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " with no harness for "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; website-only codes fail "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "; type ignore fails "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 2.3.1"
+    },
+    {
+      "slug": "pylint",
+      "name": "Pylint",
+      "page": "/tools/pylint.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom checkers, CheckerTestCase and author-chosen ids meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; help-msg meets "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "; disable comments detectable under "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 4.0.8"
+    },
+    {
+      "slug": "pyright",
+      "name": "Pyright",
+      "page": "/tools/pyright.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Type checker with no plug-in mechanism so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " fails; some diagnostics carry no rule for "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; website-only docs fail "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        }
+      ],
+      "checked": "2026-09-08, version 1.1.411"
+    },
+    {
+      "slug": "ruff",
+      "name": "Ruff",
+      "page": "/tools/ruff.html",
+      "language": "Python",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "No third-party rules so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " fails; select and rule meet "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": " for bundled rules; specific noqa fails "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 0.16.6"
+    },
+    {
+      "slug": "go-vet",
+      "name": "go vet",
+      "page": "/tools/go-vet.html",
+      "language": "Go",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "vettool and analysistest meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; help resolves offline for "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "; analyzer name in plain output unverified so "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": " partial"
+        }
+      ],
+      "checked": "2026-09-08, version Go 1.27.1"
+    },
+    {
+      "slug": "golangci-lint",
+      "name": "golangci-lint",
+      "page": "/tools/golangci-lint.html",
+      "language": "Go",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Module plugins and analysistest meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; nolintlint meets "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "7.2",
+          "href": "/DETECTOR-SPEC.html#72-an-inline-suppression-route-should-require-a-written-reason"
+        },
+        {
+          "text": "; wrapped tool codes leave "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " partial"
+        }
+      ],
+      "checked": "2026-09-08, version v2.13.2"
+    },
+    {
+      "slug": "staticcheck",
+      "name": "Staticcheck",
+      "page": "/tools/staticcheck.html",
+      "language": "Go",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Fixed catalogue so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " fails; checks flag and -explain meet "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": " for bundled checks; lint ignore fails "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 2026.2 (v0.8.0)"
+    },
+    {
+      "slug": "cargo-deny",
+      "name": "cargo-deny",
+      "page": "/tools/cargo-deny.html",
+      "language": "Rust",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Dependency auditor with fixed checks so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " fails; per-check runs leave "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "5.2",
+          "href": "/DETECTOR-SPEC.html#52-the-detector-must-support-invocation-over-a-subset-at-minimum-a-single-file"
+        },
+        {
+          "text": " partial; website-only codes fail "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        }
+      ],
+      "checked": "2026-09-08, version 0.20.2"
+    },
+    {
+      "slug": "clippy",
+      "name": "Clippy",
+      "page": "/tools/clippy.html",
+      "language": "Rust",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Lints only by upstream contribution so "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " fails; allow_attributes lints meet "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "7.2",
+          "href": "/DETECTOR-SPEC.html#72-an-inline-suppression-route-should-require-a-written-reason"
+        },
+        {
+          "text": "; offline resolution for "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " not verified"
+        }
+      ],
+      "checked": "2026-09-08, version Rust 1.98.1"
+    },
+    {
+      "slug": "ast-grep",
+      "name": "ast-grep",
+      "page": "/tools/ast-grep.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Bespoke YAML rules, a test harness and printed ids meet every MUST in 4 and 5; kind and regex rules make ast-grep-ignore detectable for "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 0.45.3"
+    },
+    {
+      "slug": "checkov",
+      "name": "Checkov",
+      "page": "/tools/checkov.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom policies with printed ids meet sections "
+        },
+        {
+          "text": "4",
+          "href": "/DETECTOR-SPEC.html#4-authoring-rules"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "5",
+          "href": "/DETECTOR-SPEC.html#5-reporting"
+        },
+        {
+          "text": "; online-only Guide links fail "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        },
+        {
+          "text": "; inline skips fail "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 3.3.16"
+    },
+    {
+      "slug": "codeql",
+      "name": "CodeQL",
+      "page": "/tools/codeql.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom packs and a test harness meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; findings go to a file only, failing "
+        },
+        {
+          "text": "5.3",
+          "href": "/DETECTOR-SPEC.html#53-the-result-must-reach-the-practitioner-in-the-output-of-the-command-they-ran"
+        },
+        {
+          "text": "; no id lookup for "
+        },
+        {
+          "text": "6.1",
+          "href": "/DETECTOR-SPEC.html#61-the-detector-must-provide-a-mechanism-that-resolves-a-printed-identifier-to-its-documentation"
+        }
+      ],
+      "checked": "2026-09-08, version CLI 2.26.4"
+    },
+    {
+      "slug": "pre-commit",
+      "name": "pre-commit",
+      "page": "/tools/pre-commit.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "detector": {
+        "mark": "🟢",
+        "level": "green"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "A host, not a detector; local hooks run one at a time with a printed id meet sections "
+        },
+        {
+          "text": "4",
+          "href": "/DETECTOR-SPEC.html#4-authoring-rules"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "5",
+          "href": "/DETECTOR-SPEC.html#5-reporting"
+        },
+        {
+          "text": ", and it offers no inline route for "
+        },
+        {
+          "text": "7.1",
+          "href": "/DETECTOR-SPEC.html#71-a-detector-may-offer-an-inline-suppression-route-but-must-make-it-detectable-or-disableable"
+        }
+      ],
+      "checked": "2026-09-08, version 4.6.2"
+    },
+    {
+      "slug": "semgrep",
+      "name": "Semgrep",
+      "page": "/tools/semgrep.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Local YAML rules and a test harness meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "4.2",
+          "href": "/DETECTOR-SPEC.html#42-the-detector-must-provide-a-harness-that-runs-a-single-rule-against-supplied-code"
+        },
+        {
+          "text": "; the path-derived prefix fails "
+        },
+        {
+          "text": "4.3",
+          "href": "/DETECTOR-SPEC.html#43-the-detector-must-allow-a-rule-to-carry-a-stable-identifier-and-must-print-it-with-every-finding"
+        },
+        {
+          "text": "; registry rules resolve online only, failing "
+        },
+        {
+          "text": "6.2",
+          "href": "/DETECTOR-SPEC.html#62-resolution-of-a-bundled-rules-identifier-must-work-from-the-installed-copy-without-network-access"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "6.3",
+          "href": "/DETECTOR-SPEC.html#63-a-bundled-rules-documentation-must-ship-with-the-rule-at-a-version-tracked-together"
+        }
+      ],
+      "checked": "2026-09-08, version 1.176.0"
+    },
+    {
+      "slug": "sonarqube",
+      "name": "SonarQube",
+      "page": "/tools/sonarqube.html",
+      "language": "Multi-language",
+      "kind": "tool",
+      "readiness": {
+        "mark": "🟡",
+        "level": "amber"
+      },
+      "detector": {
+        "mark": "🔴",
+        "level": "red"
+      },
+      "toolchain": {
+        "mark": "·",
+        "level": "none"
+      },
+      "project": {
+        "mark": "·",
+        "level": "none"
+      },
+      "notes": [
+        {
+          "text": "Custom plugin rules meet "
+        },
+        {
+          "text": "4.1",
+          "href": "/DETECTOR-SPEC.html#41-the-detector-must-support-bespoke-rules-written-by-the-project-that-runs-it"
+        },
+        {
+          "text": "; the scanner needs a server and prints no findings so "
+        },
+        {
+          "text": "5.1",
+          "href": "/DETECTOR-SPEC.html#51-the-detector-must-be-invocable-by-the-practitioner-locally-with-no-infrastructure"
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "5.3",
+          "href": "/DETECTOR-SPEC.html#53-the-result-must-reach-the-practitioner-in-the-output-of-the-command-they-ran"
+        },
+        {
+          "text": " and "
+        },
+        {
+          "text": "5.4",
+          "href": "/DETECTOR-SPEC.html#54-a-finding-must-not-be-reportable-only-through-a-hosted-service-licence-tier-or-ci-only-mode-the-practitioner-cannot-invoke-locally"
+        },
+        {
+          "text": " fail"
+        }
+      ],
+      "checked": "2026-09-08, version Server 2026.4"
+    }
+  ]
+}

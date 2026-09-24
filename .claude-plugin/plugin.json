@@ -1,0 +1,14 @@
+{
+  "name": "defence-before-fix",
+  "displayName": "Defence Before Fix",
+  "version": "0.1.0",
+  "description": "Runs the Defence Before Fix (DBF) method when a defect is found: attribute it to a class, write and prove a detector rule, sweep and fix every instance, then fix the defect. Invoke with /dbf.",
+  "author": {
+    "name": "Joseph Edmonds",
+    "url": "https://ltscommerce.dev"
+  },
+  "homepage": "https://defence-before-fix.github.io/",
+  "repository": "https://github.com/Defence-Before-Fix/claude-plugin",
+  "license": "MIT",
+  "keywords": ["defence-before-fix", "dbf", "static-analysis", "quality", "methodology"]
+}

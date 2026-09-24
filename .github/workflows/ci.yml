@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Validate the plugin and marketplace manifests
+        run: |
+          claude plugin validate .claude-plugin/plugin.json --strict
+          claude plugin validate .claude-plugin/marketplace.json --strict
+          claude plugin validate skills --strict
+          claude plugin validate agents --strict
+      - name: Shellcheck the refresh script
+        run: shellcheck skills/dbf/scripts/refresh-spec.bash
+      - name: Refresh script resolves offline from the vendored snapshot
+        run: |
+          out="$(DBF_SPEC_OFFLINE=1 bash skills/dbf/scripts/refresh-spec.bash)"
+          echo "$out"
+          test "$(echo "$out" | grep -c -P '\tvendored\t')" -eq 5
+      - name: Vendored snapshot versions agree with SPEC-VERSION
+        run: bash scripts/check-spec-version.bash
