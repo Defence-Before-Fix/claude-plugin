@@ -1,7 +1,7 @@
 {
   "name": "defence-before-fix",
   "displayName": "Defence Before Fix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runs the Defence Before Fix (DBF) method when a defect is found: attribute it to a class, write and prove a detector rule, sweep and fix every instance, then fix the defect. Invoke with /dbf.",
   "author": {
     "name": "Joseph Edmonds",

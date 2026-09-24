@@ -37,6 +37,9 @@ blocking, and only then fix the original defect. It ends with a report in a fixe
 The skill will not baseline, suppress or narrow a rule on its own authority, and will not
 change the project's manifest declaration. Those decisions belong to whoever owns the codebase.
 
+The skill pre-approves only reading files and running its own refresh script. Running the
+toolchain, editing rules and committing go through your normal permission rules.
+
 ## Which specification it reads
 
 The plugin vendors a snapshot of the method, detector and toolchain specifications, the
@@ -51,17 +54,17 @@ carries its licence. The plugin's own files are MIT.
 
 ## Layout
 
-| Path                                       | What it is                                                       |
-| ------------------------------------------ | ---------------------------------------------------------------- |
-| `.claude-plugin/plugin.json`               | The plugin manifest                                              |
-| `.claude-plugin/marketplace.json`          | This repository as its own marketplace                           |
-| `skills/dbf/SKILL.md`                      | The skill: invocation, discovery, the method's order, the report |
-| `skills/dbf/references/REPORT-TEMPLATE.md` | The report shape every run fills in                              |
-| `skills/dbf/references/spec/`              | The vendored specification snapshot                              |
-| `skills/dbf/scripts/refresh-spec.bash`     | The TTL refresh and copy resolver                                |
-| `agents/independent-searcher.md`           | The searcher that never sees the rule                            |
-| `agents/conformance-reviewer.md`           | The reviewer that checks the work against the specification      |
-| `SPEC-VERSION`                             | The pinned specification versions and source commit              |
+| Path                                       | What it is                                                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `.claude-plugin/plugin.json`               | The plugin manifest                                                                                          |
+| `.claude-plugin/marketplace.json`          | This repository as its own marketplace                                                                       |
+| `skills/dbf/SKILL.md`                      | The skill: invocation, discovery, the method's order, the report                                             |
+| `skills/dbf/references/REPORT-TEMPLATE.md` | The report shape every run fills in                                                                          |
+| `skills/dbf/references/spec/`              | The vendored specification snapshot, with the register pages for the two reference toolchains under `tools/` |
+| `skills/dbf/scripts/refresh-spec.bash`     | The TTL refresh and copy resolver                                                                            |
+| `agents/independent-searcher.md`           | The searcher that never sees the rule                                                                        |
+| `agents/conformance-reviewer.md`           | The reviewer that checks the work against the specification                                                  |
+| `SPEC-VERSION`                             | The pinned specification versions and source commit                                                          |
 
 The `skills/dbf` folder is in the Agent Skills format, so it can also be copied into another
 harness's skills directory without the plugin manifest.
