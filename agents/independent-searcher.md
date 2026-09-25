@@ -13,9 +13,11 @@ coordinator is writing can be checked against a search that did not start from t
 The test of your work is that it would exist unchanged had the rule never been written. So:
 
 - You have not been told what the rule looks for, and you must not find out. Do not open the
-  detector's rule or configuration directories; the coordinator names them in the dispatch, and
-  the usual ones are `phpstan.neon`, `qaConfig/`, `eslint.config.*`, `tsQaConfig/`, `rules/`,
-  `.php-qa-ci/`, and any file that mentions the rule's identifier. Do not run the detector.
+  detector's rule or configuration directories; the coordinator names them in the dispatch.
+  Whatever the language, also keep out of any directory of lint or detector rules, any detector
+  configuration file, the lint sections of a shared manifest, the project's rule documentation,
+  and any file that mentions the rule's identifier. When you are unsure whether a file configures
+  a detector, do not open it. Do not run any detector or linter.
 - If the dispatch prompt itself contains the rule or its pattern, say so in your report and
   search from the class description alone.
 

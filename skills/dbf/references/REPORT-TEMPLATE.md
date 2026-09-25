@@ -10,10 +10,13 @@ printed by the refresh script.
 
 ## Toolchain
 
-The toolchain detected (from the manifest declaration and the tools register), the spec
-versions it declares, and the commands used for listing, identifier resolution and the
-single-rule harness. If no conforming toolchain was found, the detector chosen from the register
-and why. Where the project had recorded no calibration, the calibration assumed.
+The languages detected, with the toolchain guide used for each or a note that none existed and
+the contract was filled from the fallback guide. The toolchain detected (from the manifest
+declaration and the tools register), the spec versions it declares, the project's entry point,
+and the commands used for listing, identifier resolution and the single-rule harness. The rule
+host chosen, where it stands in the contract's rule-host order, and why; any detector the project
+gained, and how its invocation was added to the entry point. Where the project had recorded no
+calibration, the calibration assumed.
 
 ## Defect and class
 
@@ -63,7 +66,8 @@ merged at full width with a recorded known instance where the specification allo
 ## Permanence
 
 The rule's place in the project's blocking checks, and the green run through the project's own
-entry point rather than the detector directly.
+entry point rather than the detector directly. Whether the project's CI runs that entry point,
+as read from its configuration, which this run did not change.
 
 ## Toolchain and detector gaps
 
