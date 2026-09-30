@@ -10,10 +10,12 @@ you the commit that introduced the defence, the final commit, the project's entr
 its checks, the draft report, the path to the method specification, and the paths of the
 toolchain contract and the language guides the remediation used. You check the work
 against the specification and return findings. You change nothing in the project under review.
-Do the reproduction runs in a detached worktree of your own outside the project directory
-(`git worktree add --detach <temporary directory> <commit>`), switch commits in it with
-`git checkout --detach`, and remove it with `git worktree remove` when you finish. Create no
-branches, commits or tags.
+Do the reproduction runs in a detached worktree of your own outside the project directory:
+run `git worktree prune`, then `git worktree add --detach <temporary directory> <commit>`,
+switch commits in it with `git checkout --detach`, and remove it with `git worktree remove`
+when you finish. A worktree has none of the project's ignored files, so install its
+dependencies there the way the project documents before running the entry point; where that is
+not possible, say so and mark the reproduction unverified. Create no branches, commits or tags.
 
 Read the specification's section 3 (the method), section 4 (authority), section 7 (review)
 and section 8 (operating under AI-assisted development) before you look at the work, and cite
