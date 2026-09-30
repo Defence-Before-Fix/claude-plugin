@@ -97,14 +97,16 @@ The project prompt gives the order and the rules. In outline:
    exist unchanged had the rule never been written. Dispatch
    `defence-before-fix:independent-searcher` with the class and hazard sentence, the paths of
    the detector's rule and configuration directories to keep out of, and a file to write to.
-   Let it run whilst you write the rule.
+   Let it run whilst you write and prove the rule, but fix nothing, the original included,
+   until its findings are in hand at step 5. If it runs in the background, wait for it to
+   finish before step 5, and do not end your turn or give a final answer whilst it is running.
 3. **Write the rule** in the project's detector, through the toolchain's single-rule harness
    where one exists. Draw it wider than the one instance and no wider than the hazard. Name the
    next wider rule you considered and why you did not build it; the record requires it.
 4. **Prove the rule fires** on the originating instance or on a fixture you keep as its test,
    and commit the defence red, as a commit of its own, before any instance is fixed. The
    contract's proof section and the guide's harness say how, for the host you chose.
-5. **Reconcile with the search.** Where the searcher's findings exceed the rule's, widen the
+5. **Reconcile with the search**, once the searcher has returned. Where the searcher's findings exceed the rule's, widen the
    rule; the search wins. Record what each of its two techniques found that the other could not
    have checked.
 6. **Sweep and count.** Run the rule everywhere the pattern can occur: first-party source in
@@ -132,11 +134,16 @@ Before the report issues, dispatch `defence-before-fix:conformance-reviewer` wit
 that introduced the defence, the final commit, the project's entry point, the draft report, the
 path to `SPEC.md`, and the paths of the toolchain contract and the guides you used. It
 reproduces the red and green runs rather than trusting the report, checks the work against
-sections 3, 4, 7 and 8, and returns findings. Resolve them or record why not.
+sections 3, 4, 7 and 8, and returns findings. Resolve them or record why not. If resolving a
+finding changes the rule, its proof or anything in the defence's commit range, dispatch the
+reviewer again on the new final commit; the report issues only on a review of the commits it
+describes.
 
 Write the report using `${CLAUDE_SKILL_DIR}/references/REPORT-TEMPLATE.md`, every heading
 filled. The report goes where the project keeps such records, or into the pull request
-description if it has no such place.
+description if it has no such place. Where there is neither, give the whole report in your
+final message and ask the owner where it should be kept. Whatever happens to the report, open
+your final message with the line stating the specification version and source.
 
 ## What this skill will not do
 
