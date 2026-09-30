@@ -97,7 +97,9 @@ The project prompt gives the order and the rules. In outline:
    exist unchanged had the rule never been written. Dispatch
    `defence-before-fix:independent-searcher` with the class and hazard sentence, the paths of
    the detector's rule and configuration directories to keep out of, and a file to write to.
-   Let it run whilst you write the rule.
+   Dispatch it in the foreground, so that its result is in hand before you write the rule; a
+   background dispatch lets the remediation run ahead of its own search. Fix nothing, the
+   original included, until you have reconciled with it at step 5.
 3. **Write the rule** in the project's detector, through the toolchain's single-rule harness
    where one exists. Draw it wider than the one instance and no wider than the hazard. Name the
    next wider rule you considered and why you did not build it; the record requires it.
@@ -132,11 +134,17 @@ Before the report issues, dispatch `defence-before-fix:conformance-reviewer` wit
 that introduced the defence, the final commit, the project's entry point, the draft report, the
 path to `SPEC.md`, and the paths of the toolchain contract and the guides you used. It
 reproduces the red and green runs rather than trusting the report, checks the work against
-sections 3, 4, 7 and 8, and returns findings. Resolve them or record why not.
+sections 3, 4, 7 and 8, and returns findings. Resolve them or record why not. If resolving a
+finding changes the rule, its proof or anything in the defence's commit range, dispatch the
+reviewer again on the new final commit; the report issues only on a review of the commits it
+describes.
 
 Write the report using `${CLAUDE_SKILL_DIR}/references/REPORT-TEMPLATE.md`, every heading
 filled. The report goes where the project keeps such records, or into the pull request
-description if it has no such place.
+description if it has no such place. Where there is neither, write it to
+`.dbf/reports/<date>-<class>.md` at the project root, with the date as YYYY-MM-DD and the class
+as a short kebab-case name, and commit it with the remediation. Open your final message with the
+line stating the specification version and source, followed by the report's location.
 
 ## What this skill will not do
 
