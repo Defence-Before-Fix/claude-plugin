@@ -1,0 +1,58 @@
+name: Evals
+
+# Runs the plugin eval suite in evals/ with and without the plugin. Every run is a paid model
+# call, so this runs on demand and on pushes to main only, and every step after the check is
+# skipped when the repository has no ANTHROPIC_API_KEY secret (forks, or before one is added).
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  evals:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      HAS_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+    steps:
+      - name: Skip when no API key secret is configured
+        if: env.HAS_KEY != 'true'
+        run: echo "::notice::ANTHROPIC_API_KEY secret is not set; skipping the eval suite."
+      - uses: actions/checkout@v4
+        if: env.HAS_KEY == 'true'
+      - uses: actions/setup-node@v4
+        if: env.HAS_KEY == 'true'
+        with:
+          node-version: 24
+      - name: Install Claude Code, TypeScript and the shell sandbox
+        if: env.HAS_KEY == 'true'
+        run: |
+          npm install -g @anthropic-ai/claude-code typescript
+          sudo apt-get update
+          sudo apt-get install -y bubblewrap socat
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Run the eval suite
+        if: env.HAS_KEY == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude plugin eval . \
+            --trust-plugin \
+            --scaffold \
+            --model sonnet \
+            --concurrency 2 \
+            --threshold 0.8 \
+            --no-publish \
+            --max-cost-usd 15 \
+            --json evals-result.json \
+            --allow-tools Bash Write Edit
+      - name: Keep the result
+        if: always() && env.HAS_KEY == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: evals-result
+          path: |
+            evals-result.json
+            evals/results/
+          if-no-files-found: ignore

@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# The project's single QA entry point: type check, static checks, tests.
+# Every executable file in qa/checks/ is a static check; it exits non-zero when it finds a violation.
+# Usage: bin/qa          run everything, exit non-zero if anything fails
+#        bin/qa --list   list the static checks without running them
+set -uo pipefail
+cd "$(dirname "$0")/.." || exit 1
+
+mapfile -t checks < <(find qa/checks -maxdepth 1 -type f -perm -u+x | sort)
+mapfile -t tests < <(find tests -maxdepth 1 -type f -name '[a-z]*.test.ts' | sort)
+
+if [[ "${1:-}" == "--list" ]]; then
+  for c in "${checks[@]}"; do
+    printf '%s\t%s\n' "$c" "$(grep -m1 '^# summary:' "$c" | cut -d: -f2- | xargs)"
+  done
+  exit 0
+fi
+
+status=0
+kind=check
+
+echo "== typecheck"
+if ! tsc -p . ; then echo "FAIL typecheck"; status=1; fi
+
+echo "== static checks (qa/checks/)"
+for c in "${checks[@]}"; do
+  if "$c"; then
+    echo "ok   $c"
+  else
+    printf 'FAIL %s: %s\n' "$kind" "$c"
+    status=1
+  fi
+done
+
+echo "== tests"
+if ! node --test "${tests[@]}"; then echo "FAIL tests"; status=1; fi
+
+if [[ $status -eq 0 ]]; then echo "QA passed"; else echo "QA failed"; fi
+exit $status

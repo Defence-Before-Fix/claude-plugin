@@ -1,0 +1,8 @@
+{
+  "name": "checkout-pricing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "qa": "bash bin/qa"
+  }
+}

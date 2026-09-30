@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# id: QA001
+# summary: no console.log in src/ (use the logger)
+set -uo pipefail
+cd "$(dirname "$0")/../.." || exit 1
+if grep -rn --include='*.ts' 'console\.log' src/; then
+  echo "QA001: console.log in src/ - see README.md#qa001"
+  exit 1
+fi
+exit 0
