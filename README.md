@@ -74,6 +74,30 @@ carries its licence. The plugin's own files are MIT.
 | `agents/independent-searcher.md`           | The searcher that never sees the rule                                                                        |
 | `agents/conformance-reviewer.md`           | The reviewer that checks the work against the specification                                                  |
 | `SPEC-VERSION`                             | The pinned specification versions and source commit                                                          |
+| `evals/`                                   | The `claude plugin eval` suite; see Evals below                                                              |
 
 The `skills/dbf` folder is in the Agent Skills format, so it can also be copied into another
 harness's skills directory without the plugin manifest.
+
+## Evals
+
+`evals/` holds a `claude plugin eval` suite. Each case runs with the plugin and without it, and
+the difference is what the plugin contributes. `zero-discount-defect` gives a small TypeScript
+project with a QA entry point (`bin/qa`) and a support ticket for a defect whose class, `||`
+defaulting a numeric field where 0 is valid, occurs three times across two files. Its graders
+are deterministic: a check was added under `qa/checks/` and seen failing through `bin/qa`
+before any file in `src/` was edited, the reply states the instance count, every instance is
+fixed, and nothing is suppressed. Whether the skill fired is reported as an indicator, not
+scored.
+
+The case seeds its workspace with a scaffold script and needs Bash, Write and Edit, so run it
+with those granted. Bash runs under Claude Code's sandbox, which on Linux needs `bubblewrap`
+and `socat`; the fixture needs Node 24 and `tsc` on the `PATH`.
+
+```bash
+claude plugin eval . --scaffold --model sonnet --concurrency 2 --no-publish \
+  --max-cost-usd 15 --allow-tools Bash Write Edit
+```
+
+Every run is a paid model call. The `Evals` workflow runs the suite on demand and on pushes to
+`main`, and skips itself when the repository has no `ANTHROPIC_API_KEY` secret.
