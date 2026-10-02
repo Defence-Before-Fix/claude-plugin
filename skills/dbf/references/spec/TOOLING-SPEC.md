@@ -1,7 +1,7 @@
 # Defence Before Fix: Toolchain Specification
 
 **Version**: 0.2.0, published 2026-09-08
-**Companion to**: [the method specification](SPEC.md), version 1.0.1, and [the detector specification](DETECTOR-SPEC.md), version 1.0.0
+**Companion to**: [the method specification](SPEC.md), version 1.1.0, and [the detector specification](DETECTOR-SPEC.md), version 1.0.0
 **Author**: [Joseph Edmonds](https://ltscommerce.dev), [Edmonds Commerce](https://edmondscommerce.co.uk)
 **Coined**: 22 February 2026, in [the original article](https://ltscommerce.dev/articles/defence-before-fix-static-analysis)
 

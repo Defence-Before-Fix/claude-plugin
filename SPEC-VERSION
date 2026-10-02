@@ -1,5 +1,5 @@
-method=1.0.1
+method=1.1.0
 detector=1.0.0
 toolchain=0.2.0
 source=https://github.com/Defence-Before-Fix/defence-before-fix.github.io
-commit=754e50836b88ca7823b8656643f9d9d5fb69c575
+commit=0c9f64fb29b1377ac67ab54fef78e13de1cf3b5d

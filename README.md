@@ -51,11 +51,17 @@ toolchain, editing rules and committing go through your normal permission rules.
 ## Which specification it reads
 
 The plugin vendors a snapshot of the method, detector and toolchain specifications, the
-generated agent prompt and the tools register, pinned to the versions in `SPEC-VERSION`. On
-each run the skill's refresh script fetches the canonical raw markdown from the site into the
-plugin's data directory when the cached copy is older than a day, and falls back to the cached
-or vendored copy when the network is unavailable. The report states which copy and version was
-read.
+generated agent prompt, the tools register and the register pages of the two reference
+toolchains, pinned to the versions in `SPEC-VERSION`. On each run the skill's refresh script
+fetches the canonical raw markdown, the register pages included from `/raw/tools/`, when the
+cached copy is older than a day, and falls back to the cached or vendored copy when the network
+is unavailable. The report states which copy and version was read.
+
+The cache lives in the plugin's data directory, `~/.claude/plugins/data/<id>/spec`. Claude Code
+does not export `CLAUDE_PLUGIN_DATA` to commands the skill runs, so the skill passes the
+directory to the script with `--data-dir`; run by hand, the script uses `CLAUDE_PLUGIN_DATA`
+when it is set, then `$XDG_CACHE_HOME/defence-before-fix/spec`, then
+`~/.cache/defence-before-fix/spec`.
 
 The specification documents are published under CC BY 4.0 by Joseph Edmonds; the snapshot
 carries its licence. The plugin's own files are MIT.
@@ -74,6 +80,7 @@ carries its licence. The plugin's own files are MIT.
 | `agents/independent-searcher.md`           | The searcher that never sees the rule                                                                        |
 | `agents/conformance-reviewer.md`           | The reviewer that checks the work against the specification                                                  |
 | `SPEC-VERSION`                             | The pinned specification versions and source commit                                                          |
+| `CHANGELOG.md`                             | What changed in each release                                                                                 |
 
 The `skills/dbf` folder is in the Agent Skills format, so it can also be copied into another
 harness's skills directory without the plugin manifest.

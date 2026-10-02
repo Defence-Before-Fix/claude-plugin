@@ -41,7 +41,18 @@ command run and its output, and the commit in which the red proof survives on it
 What the independent searcher looked for, before the rule existed and without sight of it.
 What text search found that reading could not have checked, and what reading found that text
 search could not have. Which instances the search found that the rule initially missed, and
-how the rule was widened in response. The search wins over the rule.
+how the rule was widened in response. The search wins over the rule. The path of the
+searcher's file, inside the project and committed with this report.
+
+## Scope decision
+
+Written at the reconciliation step, before the sweep. The class sentence as named at
+attribution, unchanged. Every finding in the searcher's file, marked as caught by the rule,
+inside the class and missed by the rule, or outside the class; for each outside, the sentence
+clause 3.3 Part B of the method specification asks for, and how it was confirmed by search. For
+each finding inside the class that the rule missed, the widening and its commit, or the owner
+decision and its reason. For each decision, the clause text it relies on, quoted verbatim from
+the copy of the specification named above.
 
 ## Sweep and count
 
@@ -59,7 +70,7 @@ or by leaving the hazard in place.
 ## Decisions referred to the owner
 
 Each decision outside the practitioner's authority under section 4 of the method specification:
-what it is, the count fixed and the count remaining, what stopped the fixing, what to try next,
+the section 4 bullet it falls under, quoted verbatim, what it is, the count fixed and the count remaining, what stopped the fixing, what to try next,
 and what fixing it would take. State that the rule is left unmerged rather than weakened, or
 merged at full width with a recorded known instance where the specification allows that.
 
@@ -77,3 +88,11 @@ reported rather than worked around.
 ## The original defect
 
 The conventional fix, and the test that reproduces the defect and now passes.
+
+## Conformance review
+
+In the draft the reviewer sees, say that the review is pending. Once it returns: the commits the
+reviewer reproduced, its verdict and its findings as it returned them, and the
+path of its review file, committed with this report. Against each finding, the commit that
+resolved it or why it was not resolved. Where commits beyond the report followed the review,
+the later review that covered them.

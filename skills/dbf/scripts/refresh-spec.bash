@@ -9,10 +9,17 @@
 # vendored snapshot itself is missing or an argument is malformed; a failed or
 # malformed fetch is reported and the vendored or cached copy is used instead.
 #
-# Usage: refresh-spec.bash [--ttl SECONDS] [--offline] [--force]
+# Usage: refresh-spec.bash [--data-dir DIR] [--ttl SECONDS] [--offline] [--force]
+#   --data-dir the plugin's data directory; the cache goes in DIR/spec. Claude
+#              Code does not export CLAUDE_PLUGIN_DATA to the Bash tool, so the
+#              skill passes it here from its own substituted text. An empty
+#              value counts as not given.
 #   --ttl      cache lifetime in seconds (default 86400, env DBF_SPEC_TTL)
 #   --offline  never touch the network (env DBF_SPEC_OFFLINE=1)
 #   --force    fetch regardless of cache age
+#
+# The cache is DIR/spec from --data-dir, else $CLAUDE_PLUGIN_DATA/spec, else
+# $XDG_CACHE_HOME/defence-before-fix/spec, else ~/.cache/defence-before-fix/spec.
 
 set -euo pipefail
 
@@ -23,8 +30,16 @@ site="https://defence-before-fix.github.io"
 ttl="${DBF_SPEC_TTL:-86400}"
 offline="${DBF_SPEC_OFFLINE:-0}"
 force=0
+dataDir="${CLAUDE_PLUGIN_DATA:-}"
 while (($# > 0)); do
   case "$1" in
+    --data-dir)
+      (($# >= 2)) || { echo "refresh-spec: --data-dir needs a value" >&2; exit 2; }
+      if [[ -n "$2" ]]; then
+        dataDir="$2"
+      fi
+      shift 2
+      ;;
     --ttl)
       ttl="${2:-}"
       shift 2 || { echo "refresh-spec: --ttl needs a value" >&2; exit 2; }
@@ -42,8 +57,8 @@ fi
 # Where the cache lives. With no data directory and no home, there is nowhere
 # durable to cache, so the run is vendored-only.
 cacheDir=""
-if [[ -n "${CLAUDE_PLUGIN_DATA:-}" ]]; then
-  cacheDir="$CLAUDE_PLUGIN_DATA/spec"
+if [[ -n "$dataDir" ]]; then
+  cacheDir="$dataDir/spec"
 elif [[ -n "${XDG_CACHE_HOME:-}" ]]; then
   cacheDir="$XDG_CACHE_HOME/defence-before-fix/spec"
 elif [[ -n "${HOME:-}" ]]; then
@@ -56,7 +71,9 @@ docs=(
   "DETECTOR-SPEC.md|DETECTOR-SPEC.md|raw/DETECTOR-SPEC.md"
   "TOOLING-SPEC.md|TOOLING-SPEC.md|raw/TOOLING-SPEC.md"
   "project-prompt.md|project-prompt.md|defence-before-fix-project-prompt.md"
-  "register.json|register.json|tools/register.json"
+  "register.json|register.json|raw/tools/register.json"
+  "tools/php-qa-ci.md|tools/php-qa-ci.md|raw/tools/php-qa-ci.md"
+  "tools/ts-qa-ci.md|tools/ts-qa-ci.md|raw/tools/ts-qa-ci.md"
 )
 
 for entry in "${docs[@]}"; do
@@ -92,6 +109,9 @@ looksRight() {
       ;;
     register.json)
       [[ "$(head -c 1 "$file")" == "{" ]]
+      ;;
+    tools/*.md)
+      [[ "$(head -n 1 "$file")" == "---" ]] && grep -q -m1 -E '^title: ' "$file"
       ;;
     *)
       return 1
@@ -151,6 +171,7 @@ if [[ -n "$cacheDir" ]]; then
       ok=1
       for entry in "${docs[@]}"; do
         IFS='|' read -r name _ remote <<<"$entry"
+        mkdir -p "$(dirname "$tmpDir/$name")"
         if ! curl -fsS --max-time 20 -o "$tmpDir/$name" "$site/$remote"; then
           ok=0
           notes+=("fetch of $site/$remote failed")
@@ -165,6 +186,7 @@ if [[ -n "$cacheDir" ]]; then
       if ((ok == 1)); then
         for entry in "${docs[@]}"; do
           IFS='|' read -r name _ _ <<<"$entry"
+          mkdir -p "$(dirname "$cacheDir/$name")"
           mv -f "$tmpDir/$name" "$cacheDir/$name"
         done
         date +%s >"$stamp"

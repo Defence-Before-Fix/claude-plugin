@@ -2,7 +2,8 @@
 
 An instance of [the toolchain contract](CONTRACT.md). Grades are from `register.json`; re-read
 it, since this page does not track it. The reference toolchain is php-qa-ci, and its register
-page, [spec/tools/php-qa-ci.md](../spec/tools/php-qa-ci.md), is the verified source for every
+page, `tools/php-qa-ci.md` at the path the refresh script prints (vendored at
+[spec/tools/php-qa-ci.md](../spec/tools/php-qa-ci.md)), is the verified source for every
 php-qa-ci command below.
 
 ## Detection
