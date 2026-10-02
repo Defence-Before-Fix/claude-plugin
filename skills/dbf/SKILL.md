@@ -105,8 +105,8 @@ The project prompt gives the order and the rules. In outline:
    section 3 below, or beside the report where the project keeps such records. Never a path
    outside the project such as `/tmp`: the search is evidence the report cites, and it is
    committed with the report. Dispatch it in the foreground, so that its result is in hand
-   before you write the rule; a background dispatch lets the remediation run ahead of its own search. Fix nothing, the
-   original included, until you have reconciled with it at step 5.
+   before you write the rule; a background dispatch lets the remediation run ahead of its own
+   search. Fix nothing, the original included, until you have reconciled with it at step 5.
 
 3. **Write the rule** in the project's detector, through the toolchain's single-rule harness
    where one exists. Draw it wider than the one instance and no wider than the hazard. Name the
@@ -123,23 +123,35 @@ The project prompt gives the order and the rules. In outline:
    before step 6:
 
    - the class sentence from step 1, unchanged;
+   - each part of that sentence, with whether the rule detects it and how that was shown, such
+     as a fixture per part; every part the rule does not check is handled as an in-class miss
+     below, whether or not the search found an instance of it;
    - every finding in the search file, marked as caught by the rule, inside the class and
      missed by the rule, or outside the class; for outside, the sentence clause 3.3 Part B asks
      for, stating why the hazard cannot arise there, and how it was confirmed by search;
-   - for every finding inside the class that the rule misses, the rule widened to catch it,
-     with the commit, or the gap recorded as an owner decision with its reason;
+   - for every in-class miss, the rule widened to catch it, with the commit, or the owner route
+     below it went to, with its reason; on an owner route, every instance the search found
+     there is still fixed at step 7 and counted in the fixed and remaining counts;
    - for each decision, the clause text it relies on, quoted verbatim from the copy you read.
 
    A rule narrower than the class you named is not finished. Clause 3.1: "If an independent
    search finds [Instances] the [Rule] missed, the [Class] was drawn too narrowly and the
    [Rule] MUST be widened until it catches them." Where the class's bounds sit is yours to
    decide under section 4, so widen the rule, commit it red again as step 4 did, and go on.
-   Leaving it narrower is the owner's decision only on the ground section 4's last bullet
-   names, that "the wider check is harder to build without [False positives]"; then name the
-   code the wider check would wrongly match, and refer it at step 7. A finding inside the class
-   you named is never relabelled as outside it: excluding it is a narrowing, decided by clause
-   3.3 Part B's sentence, and where you cannot write that sentence it is a suppression for the
-   owner. Record what each of the search's two techniques found that the other could not have
+   The routes that leave it narrower are these, and each is recorded as such:
+
+   - the ground section 4's last bullet names, that "the wider check is harder to build without
+     [False positives]": name the code the wider check would wrongly match and refer the
+     decision at step 7. That bullet goes on: "The [Instances] the search found are fixed
+     regardless; what stays with the [Owner] is the [Class] left partly undefended." Fix them;
+   - an exclusion of in-class code for which you cannot write clause 3.3 Part B's sentence:
+     that is a suppression, the owner's under section 4, referred with the doubt stated. A
+     finding inside the class you named is never relabelled as outside it;
+   - a widening that no detector can express, a bespoke one included, because none is
+     practical: a toolchain gap under clause 3.2, recorded where and as that clause says, with
+     the rule built as far as it can go.
+
+   Record what each of the search's two techniques found that the other could not have
    checked.
 
 6. **Sweep and count.** Run the rule everywhere the pattern can occur: first-party source in
@@ -156,7 +168,9 @@ The project prompt gives the order and the rules. In outline:
    stopped you and what to try next, and leave the rule unmerged rather than weakened. Each
    referral in the report quotes, verbatim, the bullet of section 4's list of decisions that
    must go to the owner under which it falls. A decision that fits none of those bullets is
-   yours under section 4's first list: do it rather than refer it.
+   yours under section 4's first list: do it rather than refer it. The one other referral is
+   clause 3.2's: a toolchain gap you cannot record where the toolchain keeps its record is
+   reported as a blocked decision, citing that clause.
 
 8. **Make the rule permanent and blocking**, with a terse message and a stable identifier that
    resolves through the toolchain's resolver to documentation shipped with the project. Where
@@ -175,15 +189,22 @@ path to `SPEC.md`, the paths of the toolchain contract and the guides you used, 
 file, and the file to write its review to: `.dbf/reports/<date>-<class>-review.md`, beside the
 search file, committed with the report. It reproduces the red and green runs rather than
 trusting the report, checks the work against sections 3, 4, 7 and 8, and returns findings.
-Resolve them or record why not. If resolving a finding adds any commit that changes more than the
-report, whether to the rule, its proof, the fixes or anything else, dispatch the reviewer again
-on the new final commit; the report issues only on a review of the commits it describes.
+Resolve them or record why not. Findings are of two kinds, and resolve differently:
 
-A revision that changes only the report does not need a fresh review. Section 7 rests a verdict
-on reproduction, not on the report, and the commits reproduced have not changed. The revised
-report carries the last review's verdict and findings as the reviewer returned them, against the
-commits it reviewed, with how each finding was resolved or why not. A finding is resolved only
-by a commit, and that commit needs a fresh review; rewording the report resolves nothing.
+- **A finding about the work**, the rule, its proof, the sweep, the fixes or the tests, is
+  resolved only by a commit that changes the work. Section 7 rests the verdict on reproduction,
+  so dispatch the reviewer again on the new final commit; rewording the report resolves
+  nothing.
+- **A finding about the report itself**, such as a missing or late Scope decision, a quotation
+  that is not verbatim, or a referral that does not quote its section 4 bullet, is resolved by
+  revising the report. Dispatch the reviewer again with the revised report, the same commits
+  and the earlier review, asking it to confirm the record findings only; the reproduction it
+  already ran stands, because the commits it reproduced have not changed.
+
+Committing the report, the search file and the review file is not a change to the work and
+does not call for another review. The report issues only on a review of the work commits it
+describes, and carries that review's verdict and findings as returned, against each the commit
+or report revision that resolved it, or why it was not resolved.
 
 Write the report using `${CLAUDE_SKILL_DIR}/references/REPORT-TEMPLATE.md`, every heading
 filled. The report goes where the project keeps such records, or into the pull request
