@@ -2,7 +2,7 @@
 
 Defence Before Fix (DBF) is a phase that runs before a defect is fixed: the instance is treated
 as evidence of a class, and the defence that detects the class is built and seen to fire before
-the fix is made. The method is specified at <https://defence-before-fix.github.io/>.
+the fix is made. Specification: https://defence-before-fix.github.io/
 
 This plugin gives Claude Code one skill, `/dbf`, that runs the method in the project you are
 working in, and two agents the skill dispatches: an independent searcher, whose fresh context
