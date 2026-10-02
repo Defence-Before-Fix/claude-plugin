@@ -2,8 +2,9 @@
 
 An instance of [the toolchain contract](CONTRACT.md). Grades are from `register.json`; re-read
 it, since this page does not track it. The reference toolchain is ts-qa-ci, and its register
-page, [spec/tools/ts-qa-ci.md](../spec/tools/ts-qa-ci.md), is the verified source for every
-ts-qa-ci command below.
+page, `tools/ts-qa-ci.md` at the path the refresh script prints (vendored at
+[spec/tools/ts-qa-ci.md](../spec/tools/ts-qa-ci.md)), is the verified source for every ts-qa-ci
+command below.
 
 ## Detection
 

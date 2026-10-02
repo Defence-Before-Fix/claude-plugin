@@ -32,8 +32,10 @@ no guide, it reads:
    rules, clang-tidy or tflint. Report an ungraded one as ungraded, and a graded one with its
    grade: Checkov, for one, is graded red.
 3. **A detector the register grades for the language** that can host a bespoke rule, preferring
-   a green detector grade. Its register page is on the site; where the network is unavailable,
-   the tool's own installed documentation is the source.
+   a green detector grade. Its register page is on the site as raw markdown, at
+   `https://defence-before-fix.github.io/raw/tools/<slug>.md`, with the tool's `slug` from
+   `register.json`; where the network is unavailable, the tool's own installed
+   documentation is the source.
 4. **Semgrep**, the universal fallback. `semgrep show supported-languages` lists the grammars the
    installed version parses; its `generic` mode and `pattern-regex` cover formats with no
    grammar. The contract's [Semgrep section](CONTRACT.md#semgrep-as-the-fallback) covers its

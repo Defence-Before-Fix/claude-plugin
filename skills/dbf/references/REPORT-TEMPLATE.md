@@ -41,7 +41,22 @@ command run and its output, and the commit in which the red proof survives on it
 What the independent searcher looked for, before the rule existed and without sight of it.
 What text search found that reading could not have checked, and what reading found that text
 search could not have. Which instances the search found that the rule initially missed, and
-how the rule was widened in response. The search wins over the rule.
+how the rule was widened in response. The search wins over the rule. The path of the
+searcher's file, inside the project and committed with this report.
+
+## Scope decision
+
+Written at the reconciliation step, before the sweep. The class sentence as named at
+attribution, unchanged. Each part of that sentence, with whether the rule detects it and how
+that was shown; a part the rule does not check is an in-class miss, whether or not the search
+found an instance of it. Every finding in the searcher's file, marked as caught by the rule,
+inside the class and missed by the rule, or outside the class; for each outside, the sentence
+clause 3.3 Part B of the method specification asks for, and how it was confirmed by search. For
+each in-class miss, the widening and its commit, or the route that left the rule narrower (an
+owner decision under section 4, a suppression referred because no Part B sentence could be
+written, or a toolchain gap under clause 3.2) and its reason. On an owner route, the instances
+the search found there are still fixed and counted under Fixes. For each decision, the clause
+text it relies on, quoted verbatim from the copy of the specification named above.
 
 ## Sweep and count
 
@@ -59,9 +74,11 @@ or by leaving the hazard in place.
 ## Decisions referred to the owner
 
 Each decision outside the practitioner's authority under section 4 of the method specification:
-what it is, the count fixed and the count remaining, what stopped the fixing, what to try next,
-and what fixing it would take. State that the rule is left unmerged rather than weakened, or
-merged at full width with a recorded known instance where the specification allows that.
+the section 4 bullet it falls under, quoted verbatim, or for a toolchain gap that could not be
+recorded in the toolchain's own record, clause 3.2; what it is, the count fixed and the count
+remaining, what stopped the fixing, what to try next, and what fixing it would take. State
+that the rule is left unmerged rather than weakened, or merged at full width with a recorded
+known instance where the specification allows that.
 
 ## Permanence
 
@@ -77,3 +94,12 @@ reported rather than worked around.
 ## The original defect
 
 The conventional fix, and the test that reproduces the defect and now passes.
+
+## Conformance review
+
+In the draft the reviewer sees, say that the review is pending. Once it returns: the commits the
+reviewer reproduced, its verdict and its findings as it returned them, and the path of its
+review file, committed with this report. Against each finding, whether it was about the work or
+about the report, and what resolved it: for the work, the commit and the later review that
+reproduced it; for the report, the revision and the reviewer's confirmation. Or why it was not
+resolved.

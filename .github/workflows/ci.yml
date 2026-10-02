@@ -27,6 +27,18 @@ jobs:
         run: |
           out="$(DBF_SPEC_OFFLINE=1 bash skills/dbf/scripts/refresh-spec.bash)"
           echo "$out"
-          test "$(echo "$out" | grep -c -P '\tvendored\t')" -eq 5
+          test "$(echo "$out" | grep -c -P '\tvendored\t')" -eq 7
+      - name: Refresh script places the cache in the data directory it is given
+        run: |
+          data="$(mktemp -d)"
+          out="$(DBF_SPEC_OFFLINE=1 bash skills/dbf/scripts/refresh-spec.bash --data-dir "$data")"
+          echo "$out"
+          test "$(echo "$out" | grep -c -P '\tvendored\t')" -eq 7
+          mkdir -p "$data/spec"
+          cp -r skills/dbf/references/spec/. "$data/spec/"
+          date +%s >"$data/spec/.fetched"
+          out="$(DBF_SPEC_OFFLINE=1 bash skills/dbf/scripts/refresh-spec.bash --data-dir "$data")"
+          echo "$out"
+          test "$(echo "$out" | grep -c -P "\tcached\t[^\t]*\t$data/spec/")" -eq 7
       - name: Vendored snapshot versions agree with SPEC-VERSION
         run: bash scripts/check-spec-version.bash

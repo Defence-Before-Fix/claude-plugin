@@ -41,5 +41,8 @@ could not have, because the record must attribute findings to each technique. Li
 searches you ran and the forms you looked for. Say nothing about how to fix anything; that is
 not your task.
 
-Write the full list to the file the coordinator names, and return a short summary with the
-count and the path.
+Write the full list to the file the coordinator names, creating its directory if needed, and
+return a short summary with the count and the path. The file is evidence the report cites and is
+committed with it, so it belongs inside the project, normally at
+`.dbf/reports/<date>-<class>-search.md`. If the coordinator names a path outside the project,
+such as one under `/tmp`, write to that default instead and say so in your summary.

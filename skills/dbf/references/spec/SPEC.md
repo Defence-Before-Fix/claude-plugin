@@ -1,6 +1,6 @@
 # Defence Before Fix: Method Specification
 
-**Version**: 1.0.1, published 2026-09-08
+**Version**: 1.1.0, published 2026-10-02
 **Companion to**: [the detector specification](DETECTOR-SPEC.md), version 1.0.0, and [the toolchain specification](TOOLING-SPEC.md), version 0.2.0
 **Author**: [Joseph Edmonds](https://ltscommerce.dev), [Edmonds Commerce](https://edmondscommerce.co.uk)
 **Coined**: 22 February 2026, in [the original article](https://ltscommerce.dev/articles/defence-before-fix-static-analysis)
@@ -29,7 +29,7 @@ US spelling: **Defense Before Fix**. Abbreviated [DBF] throughout.
 
 ## Status of this document
 
-This is version 1.0.1 of the specification. It is normative: section 3 defines the method,
+This is version 1.1.0 of the specification. It is normative: section 3 defines the method,
 section 4 states who decides what, and section 7 defines what [Conformance] means and who may claim
 it.
 
@@ -195,6 +195,21 @@ under clause 3.2. A pattern exists, a
 mechanism gap under clause 3.2, and the [Rule] is still built. The attempt that separates the first
 from the second is complete when the [Practitioner] has checked the [Detectors] the project already
 runs and the language's own [Detector] ecosystem for an extension point, and found none.
+
+**Deferring the fix is not a fourth.** A [Defect] whose fix is postponed has not left the
+method; the attempt this section requires is owed when the fix is taken up. A
+[Practitioner] who finds a [Defect] and does not fix it now MUST record it where the project's
+other decisions are enumerable under clause 8.7, naming the [Class] where one is already
+apparent. Whether it stays unfixed is the [Owner]'s decision under section 4; the record is what
+puts it in front of them. Reporting it in conversation does not satisfy this: the conversation
+ends, and with it the only trace that the [Defect] was ever seen.
+
+**Why**: each of the three ways out costs the [Practitioner] something to take and leaves
+something an [Owner] can read: a recorded sentence naming two techniques tried, or a [Toolchain]
+gap. Deferral costs nothing, and without this record it would leave nothing, which makes it
+cheaper still than the sentence above and unseen from outside. A [Defect] mentioned once and
+never written down cannot be told apart from a [Defect] nobody found, so neither the [Class] nor
+the [Defence] it implies is ever reached.
 
 ## 3. The method
 
@@ -875,7 +890,9 @@ evidence is gone and the opportunity closes with it.
 [Conformance] is claimed at one of four levels. Partial [Conformance] MUST NOT be described as
 [Conformance].
 
-**A remediation [Conforms]** if all six clauses of section 3 were followed for that [Defect].
+**A remediation [Conforms]** if all six clauses of section 3 were followed for that [Defect], and
+the verdict that they were rests on reproduction, as this section closes by requiring, not on the
+report.
 
 **A [Defence] [Conforms]** if it satisfies clauses 3.1, 3.2, 3.3, 3.5 and 3.6: it is drawn to a
 [Class] within both bounds and not to the reported [Instance], it is evaluated by reading code, it
@@ -1019,13 +1036,13 @@ re-open it.
 
 ## 9. Citation
 
-> Edmonds, Joseph. *Defence Before Fix*, version 1.0.1. First published 22 February 2026.
+> Edmonds, Joseph. *Defence Before Fix*, version 1.1.0. First published 22 February 2026.
 > <https://ltscommerce.dev>
 
 ## Appendix A: Instructing an agent
 
 Where an [Agent] is expected to follow this method, give it the clauses rather than the article.
-This appendix restates sections 3 and 4; where the two differ, the sections govern.
+This appendix restates sections 2 to 4; where the two differ, the sections govern.
 
 > When you find a [Defect] of any kind, do not fix it yet.
 >
@@ -1067,6 +1084,9 @@ This appendix restates sections 3 and 4; where the two differ, the sections gove
 > project. If you hit one, finish everything else, then report the count and what fixing it would
 > take, and leave the [Rule] unmerged rather than merging it weakened.
 >
+> A [Defect] you find and do not fix now is recorded where the project keeps its other decisions,
+> naming the [Class] if you can already see it. Mentioning it in your output is not a record.
+>
 > If you are unsure whether code you want to exclude carries the [Hazard], you are suppressing it, so
 > refer it upwards rather than deciding. Narrow only where you are confident.
 >
@@ -1087,6 +1107,7 @@ This appendix restates sections 3 and 4; where the two differ, the sections gove
 | ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1.0.0   | 2026-09-08 | Initial specification, formalising the method published on 22 February 2026. Revised before publication after three independent cold readers understood the method correctly and still could not execute its judgement calls.                                                                                                                                                                                                                                                                                                                                                        |
 | 1.0.1   | 2026-09-08 | Clarity, no obligation changed: section 3 opens with a map of the six clauses; clause 3.1 opens with its five steps and closes with what it leaves on the record; clause 3.3 is in three named parts and its [Narrowing] part opens with the decision. The header and the terminology entries for [Detector], [Toolchain] and [Conform] name the [detector specification](DETECTOR-SPEC.md) 1.0.0 alongside the [toolchain specification](TOOLING-SPEC.md) 0.2.0, and [Conform] extends to the companion specification being claimed. Accepted under [ACCEPTANCE.md](ACCEPTANCE.md). |
+| 1.1.0   | 2026-10-02 | New obligation: a [Defect] whose fix is deferred is recorded where the project's other decisions are enumerable under clause 8.7, naming the [Class] where apparent; whether it stays unfixed is the [Owner]'s decision under section 4, and a mention in conversation is not a record. Appendix A carries the sentence for an [Agent]. Section 7's definition of a [Conforming] remediation names reproduction in the same sentence. Accepted under [ACCEPTANCE.md](ACCEPTANCE.md).                                                                                                 |
 
 <!-- Term link definitions -->
 
